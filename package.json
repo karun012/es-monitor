@@ -1,0 +1,17 @@
+{
+    "name": "es-monitor",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-qunit": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-connect": "latest"
+    },
+    "maintainers": [
+        {
+            "name": "Karun Ramakrishnan",
+            "email": "karun012@gmail.com"
+        }
+    ]
+}
