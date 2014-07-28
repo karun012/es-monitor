@@ -46,18 +46,7 @@ define(['react', 'underscore'], function (React, _) {
         displayName: 'HealthCheckWidget',
         getInitialState: function () {
             return {
-                healthStats: {
-                                 "status": 200,
-                                 "name": "Orka",
-                                 "version": {
-                                     "number": "1.3.0",
-                                     "build_hash": "1265b1454eee7725a6918f57415c480028700fb4",
-                                     "build_timestamp": "2014-07-23T13:46:36Z",
-                                     "build_snapshot": false,
-                                     "lucene_version": "4.9"
-                                 },
-                                 "tagline": "You Know, for Search"
-                             }
+                healthStats: {}
             };
         },
         componentWillMount: function () {
