@@ -2,13 +2,19 @@ define(['react', 'underscore'], function (React, _) {
     var dom = React.DOM;
 
     var healthStatKeys = ['status', 'name', 'version-number', 'version-lucene_version'];
+    var healthStatLabels = {
+                               'status': 'Status',
+                               'name': 'Name', 
+                               'version-number': 'Version Number',
+                               'version-lucene_version': 'Lucene Version'
+                           };
 
     var HealthStat = React.createClass({
         displayName: 'HealthStat',
         render: function () {
             var statName, statValue
-            statName = dom.span({}, (this.props.key));
-            statValue = dom.span({className: this.props.key}, (this.props.value));
+            statName = dom.span({className: this.props.key + ' ' + 'label'}, (_.result(healthStatLabels, this.props.key)));
+            statValue = dom.span({className: this.props.key + ' ' + 'value'}, (this.props.value));
 
             return dom.div({}, statName, statValue);
         }

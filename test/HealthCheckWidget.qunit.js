@@ -57,9 +57,13 @@ define(['react',
 
         React.addons.TestUtils.renderIntoDocument(widget);
 
-        qunit.equal(find(widget, 'status').getDOMNode().textContent, '200');
-        qunit.equal(find(widget, 'name').getDOMNode().textContent, 'Orka');
-        qunit.equal(find(widget, 'version-number').getDOMNode().textContent, '1.3.0');
-        qunit.equal(find(widget, 'version-lucene_version').getDOMNode().textContent, '4.9');
+        qunit.equal(find(widget, 'status value').getDOMNode().textContent, '200');
+        qunit.equal(find(widget, 'status label').getDOMNode().textContent, 'Status');
+        qunit.equal(find(widget, 'name value').getDOMNode().textContent, 'Orka');
+        qunit.equal(find(widget, 'name label').getDOMNode().textContent, 'Name');
+        qunit.equal(find(widget, 'version-number value').getDOMNode().textContent, '1.3.0');
+        qunit.equal(find(widget, 'version-number label').getDOMNode().textContent, 'Version Number');
+        qunit.equal(find(widget, 'version-lucene_version value').getDOMNode().textContent, '4.9');
+        qunit.equal(find(widget, 'version-lucene_version label').getDOMNode().textContent, 'Lucene Version');
     });
 });
