@@ -27,29 +27,29 @@ define(['react',
     qunit.module('health check widget');
 
     qunit.test('gets the health of the elastic search instance when created', function () {
-        var widget, httpClient, mockHttpClient;
+        var widget, httpClient;
 
         httpClient = new HttpClient();
 
-        mockHttpClient = sinon.stub(httpClient);
+        sinon.stub(httpClient, 'get').returns($.Deferred());
 
-        widget = HealthCheckWidget.create({httpClient: mockHttpClient});
+        widget = HealthCheckWidget.create({httpClient: httpClient});
 
         React.addons.TestUtils.renderIntoDocument(widget);
 
         qunit.ok(widget !== null);
 
-        sinon.assert.calledWithMatch(mockHttpClient.get, {url: 'http://localhost:9200/'});
+        sinon.assert.calledWithMatch(httpClient.get, {url: 'http://localhost:9200/'});
     });
 
     qunit.test('renders status of the elastic search instance if it is up, and running', function () {
-        var widget, httpClient, mockHttpClient, getPromise;
+        var widget, httpClient, getPromise;
 
         getPromise = $.Deferred();
 
         httpClient = new HttpClient();
 
-        mockHttpClient = sinon.stub(httpClient, 'get').returns(getPromise);
+        sinon.stub(httpClient, 'get').returns(getPromise);
 
         widget = HealthCheckWidget.create({httpClient: httpClient});
 
