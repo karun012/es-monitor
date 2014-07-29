@@ -8,7 +8,8 @@ var require = {
         'react': 'lib/react-with-addons-0.10.0',
         'superagent': 'lib/superagent-0.18.0',
         'backbone': 'lib/backbone',
-        'squire': 'lib/squire'
+        'squire': 'lib/squire',
+        'bootstrap': 'lib/bootstrap.min'
     },
     shim: {
         'qunit': {
@@ -27,6 +28,9 @@ var require = {
         },
         'squire': {
             exports: 'squire'
+        },
+        'bootstrap': {
+            exports: 'bootstrap'
         }
     }
 };
